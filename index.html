@@ -19,9 +19,19 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--ink);
-    background: linear-gradient(180deg, #ffffff 0%, #ffffff 18%, var(--bg-blue) 100%);
+    background: var(--bg-blue);
     min-height: 100vh;
     line-height: 1.6;
+  }
+  /* Gradient pinned to the viewport so it always spans exactly the window
+     height, regardless of page length or scroll. (A fixed underlay — iOS
+     Safari ignores background-attachment: fixed.) */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 18%, var(--bg-blue) 100%);
   }
   main { max-width: 680px; margin: 0 auto; padding: 0 24px; }
   section { padding: 56px 0; border-bottom: 1px solid rgba(41, 46, 97, 0.08); }
@@ -36,6 +46,8 @@
     margin-bottom: 24px;
   }
   .wordmark {
+    /* ui-rounded = SF Rounded on Apple devices, matching the in-app wordmark. */
+    font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: clamp(2.6rem, 8vw, 3.6rem);
     font-weight: 800;
     letter-spacing: -0.02em;
