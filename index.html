@@ -8,14 +8,49 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="icon.png">
 <style>
+  /* Nunito (SIL OFL) — rounded fallback for non-Apple browsers. Apple's
+     SF Rounded is license-locked to Apple platforms and can't be self-hosted,
+     so ui-rounded stays first in the stack and Nunito covers everyone else. */
+  @font-face {
+    font-family: "Nunito";
+    src: url("fonts/nunito.woff2") format("woff2");
+    font-weight: 200 1000;
+    font-display: swap;
+  }
   :root {
     --navy: #292E61;
     --fuchsia: #DE30B3;
     --ink: #1c1c28;
     --muted: #5c5c6e;
     --bg-blue: #eaf1fb;
-    --rounded: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --grad-top: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --card-bg-strong: rgba(255, 255, 255, 0.85);
+    --card-border: rgba(41, 46, 97, 0.10);
+    --card-border-strong: rgba(41, 46, 97, 0.12);
+    --hairline: rgba(41, 46, 97, 0.08);
+    --badge-bg: #292E61;
+    --rounded: ui-rounded, "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
+  /* Mirrors the app's dark palette: navy reads as a pale lavender (text only,
+     never a fill), fuchsia brightens a touch for contrast on dark. */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --navy: #aab1f2;
+      --fuchsia: #f051c8;
+      --ink: #e6e6ee;
+      --muted: #9a9aae;
+      --bg-blue: #101226;
+      --grad-top: #1a1c30;
+      --card-bg: rgba(255, 255, 255, 0.06);
+      --card-bg-strong: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --card-border-strong: rgba(255, 255, 255, 0.14);
+      --hairline: rgba(255, 255, 255, 0.10);
+      --badge-bg: #3d4494;
+    }
+  }
+  html { color-scheme: light dark; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -32,10 +67,10 @@
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(180deg, #ffffff 0%, #ffffff 18%, var(--bg-blue) 100%);
+    background: linear-gradient(180deg, var(--grad-top) 0%, var(--grad-top) 18%, var(--bg-blue) 100%);
   }
   main { max-width: 680px; margin: 0 auto; padding: 0 24px; }
-  section { padding: 56px 0; border-bottom: 1px solid rgba(41, 46, 97, 0.08); }
+  section { padding: 56px 0; border-bottom: 1px solid var(--hairline); }
   section:last-of-type { border-bottom: none; }
 
   .hero { text-align: center; padding: 72px 0 64px; border-bottom: none; }
@@ -67,7 +102,7 @@
     display: inline-block;
     margin-top: 28px;
     padding: 10px 22px;
-    background: var(--navy);
+    background: var(--badge-bg);
     color: #fff;
     border-radius: 999px;
     font-family: var(--rounded);
@@ -94,8 +129,8 @@
   ul.features li {
     padding: 12px 16px;
     margin-bottom: 10px;
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(41, 46, 97, 0.10);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
   }
   ul.features b { color: var(--navy); }
@@ -103,8 +138,8 @@
 
   /* Fridgeworthy Family — mirrors the in-app paywall: FAMILY pill, navy card. */
   .family-card {
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(41, 46, 97, 0.12);
+    background: var(--card-bg-strong);
+    border: 1px solid var(--card-border-strong);
     border-radius: 16px;
     padding: 24px;
   }
@@ -126,8 +161,8 @@
   .family-note { margin-top: 14px; color: var(--muted); font-size: 0.92rem; }
 
   .privacy-callout {
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(41, 46, 97, 0.12);
+    background: var(--card-bg-strong);
+    border: 1px solid var(--card-border-strong);
     border-radius: 16px;
     padding: 24px;
   }
