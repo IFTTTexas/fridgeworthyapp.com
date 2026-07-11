@@ -14,6 +14,7 @@
     --ink: #1c1c28;
     --muted: #5c5c6e;
     --bg-blue: #eaf1fb;
+    --rounded: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -47,7 +48,7 @@
   }
   .wordmark {
     /* ui-rounded = SF Rounded on Apple devices, matching the in-app wordmark. */
-    font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--rounded);
     font-size: clamp(2.6rem, 8vw, 3.6rem);
     font-weight: 800;
     letter-spacing: -0.02em;
@@ -55,6 +56,7 @@
   }
   .wordmark span { color: var(--fuchsia); }
   .tagline {
+    font-family: var(--rounded);
     font-size: clamp(1.15rem, 4vw, 1.4rem);
     font-weight: 650;
     color: var(--navy);
@@ -68,11 +70,13 @@
     background: var(--navy);
     color: #fff;
     border-radius: 999px;
+    font-family: var(--rounded);
     font-weight: 600;
     font-size: 0.95rem;
   }
 
   h2 {
+    font-family: var(--rounded);
     font-size: 1.5rem;
     font-weight: 750;
     color: var(--navy);
@@ -95,6 +99,31 @@
     border-radius: 12px;
   }
   ul.features b { color: var(--navy); }
+  ul.features .emoji { margin-right: 8px; }
+
+  /* Fridgeworthy Family — mirrors the in-app paywall: FAMILY pill, navy card. */
+  .family-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(41, 46, 97, 0.12);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .family-pill {
+    display: inline-block;
+    padding: 3px 12px;
+    background: var(--fuchsia);
+    color: #fff;
+    border-radius: 999px;
+    font-family: var(--rounded);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+  .family-card ul { list-style: none; margin-top: 12px; }
+  .family-card ul li { padding: 5px 0; }
+  .family-card ul .emoji { margin-right: 8px; }
+  .family-note { margin-top: 14px; color: var(--muted); font-size: 0.92rem; }
 
   .privacy-callout {
     background: rgba(255, 255, 255, 0.85);
@@ -102,6 +131,9 @@
     border-radius: 16px;
     padding: 24px;
   }
+
+  .story-teaser { text-align: center; }
+  .story-teaser .heart { color: var(--fuchsia); font-size: 1.6rem; }
 
   a { color: var(--fuchsia); font-weight: 600; text-decoration: none; }
   a:hover { text-decoration: underline; }
@@ -149,24 +181,44 @@
   <section>
     <h2>Three steps, then it just runs</h2>
     <ol class="steps">
-      <li><b>Add your kids.</b> A profile for each one, with their own color and their own sheet.</li>
-      <li><b>Connect what matters.</b> Device calendars, school feeds (FACTS, RenWeb, and any
-      calendar link), plus recurring routines like "make your bed" on the days you pick.</li>
-      <li><b>Print.</b> One tap from the app or straight from a home screen widget. AirPrint
-      sends it to your printer, and the sheet lands on the fridge.</li>
+      <li><b>Add your kids.</b> A profile for each one, with their own color and their own sheet.
+      Add yourself too — it works just as well for grown-up days.</li>
+      <li><b>Connect what matters.</b> Device calendars, school portal and team calendar links,
+      plus recurring routines like "make your bed" on the days you pick.</li>
+      <li><b>Print.</b> One tap, and AirPrint sends it to your printer. Print one kid's sheet
+      or the whole family's day at once, and the fridge is set.</li>
     </ol>
   </section>
 
   <section>
     <h2>What's in the box</h2>
     <ul class="features">
-      <li><b>A sheet per kid.</b> Unlimited profiles. Each kid gets their own page in their own color.</li>
-      <li><b>Checklists and check-offs.</b> Kids check items off on paper or on the widget. Progress carries across devices.</li>
-      <li><b>Routines.</b> Chores and habits on a weekly schedule, no calendar events required.</li>
-      <li><b>Today, Soon, Later.</b> Each sheet shows today plus what's coming, so nothing sneaks up on you.</li>
-      <li><b>Widgets.</b> See each kid's day at a glance and print without opening the app.</li>
-      <li><b>School calendar ready.</b> If your school uses FACTS or publishes a calendar link, it connects in about a minute.</li>
+      <li><span class="emoji">🧒</span><b>A sheet per kid.</b> Unlimited profiles, free. Each kid gets their own page in their own color.</li>
+      <li><span class="emoji">✅</span><b>Checklists and check-offs.</b> Kids check items off on paper or in the app, and everything stays on your phone — nothing goes to a server, because there isn't one.</li>
+      <li><span class="emoji">🧺</span><b>Routines.</b> Chores and habits on a weekly schedule, no calendar events required.</li>
+      <li><span class="emoji">☀️</span><b>Today, Soon, Later.</b> Each sheet shows today plus what's coming, so nothing sneaks up on you.</li>
+      <li><span class="emoji">🌙</span><b>Tomorrow, tonight.</b> Flip to any day and print it — tomorrow's sheet can be on the fridge before bed.</li>
+      <li><span class="emoji">📤</span><b>Share a profile.</b> Send a kid's whole setup to the other parent's phone. Their phone matches the calendars to its own — no rebuilding from scratch.</li>
+      <li><span class="emoji">🏫</span><b>School calendar ready.</b> If your school portal publishes a calendar link, it connects in about a minute.</li>
     </ul>
+  </section>
+
+  <section>
+    <h2>Fridgeworthy Family</h2>
+    <div class="family-card">
+      <div class="family-pill">FAMILY</div>
+      <p>Everything above is free, for as many kids as you have. <b>Fridgeworthy Family</b>
+      is a single one-time purchase — never a subscription — that adds the ambient,
+      automatic layer:</p>
+      <ul>
+        <li><span class="emoji">📱</span><b>Widgets.</b> Each kid's day on the home screen, with check-offs and one-tap printing.</li>
+        <li><span class="emoji">⏰</span><b>Print reminders.</b> A nudge at the time you choose — tap it, and the whole family's sheets are ready to print.</li>
+        <li><span class="emoji">🖨️</span><b>Print options.</b> Print everyone at once, one page each or a compact quarter-fold.</li>
+        <li><span class="emoji">📤</span><b>Profile sharing.</b> Send your setup to another phone.</li>
+      </ul>
+      <p class="family-note">One purchase covers your whole household with Apple Family Sharing.
+      No ads, no upsells, no subscription. Ever.</p>
+    </div>
   </section>
 
   <section>
@@ -177,6 +229,14 @@
       not a setting. It's how the app is built.</p>
       <p><a href="privacy.html">Read the full privacy policy</a></p>
     </div>
+  </section>
+
+  <section class="story-teaser">
+    <div class="heart">♥</div>
+    <h2>Built at our kitchen table</h2>
+    <p>Fridgeworthy started as a homemade tool in our house — a little home server and a
+    button by the door.</p>
+    <p><a href="story.html">Read our story</a></p>
   </section>
 
   <section>
@@ -190,6 +250,7 @@
 <footer>
   Fridgeworthy &middot; Made by a parent, for the fridge &middot;
   <a href="mailto:hello@fridgeworthyapp.com">hello@fridgeworthyapp.com</a> &middot;
+  <a href="story.html">Our Story</a> &middot;
   <a href="privacy.html">Privacy</a>
 </footer>
 </body>

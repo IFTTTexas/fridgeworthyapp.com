@@ -6,18 +6,30 @@
 <title>Privacy Policy — Fridgeworthy</title>
 <meta name="description" content="Fridgeworthy collects no data. Everything runs on your device.">
 <style>
-  :root { --navy: #292E61; --fuchsia: #DE30B3; --ink: #1c1c28; --muted: #5c5c6e; }
+  :root {
+    --navy: #292E61; --fuchsia: #DE30B3; --ink: #1c1c28; --muted: #5c5c6e;
+    --bg-blue: #eaf1fb;
+    --rounded: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--ink);
-    background: #fff;
+    background: var(--bg-blue);
+    min-height: 100vh;
     line-height: 1.65;
   }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 18%, var(--bg-blue) 100%);
+  }
   main { max-width: 680px; margin: 0 auto; padding: 56px 24px 80px; }
-  h1 { color: var(--navy); font-size: 2rem; letter-spacing: -0.01em; }
+  h1 { font-family: var(--rounded); color: var(--navy); font-size: 2rem; letter-spacing: -0.01em; }
   .updated { color: var(--muted); font-size: 0.9rem; margin: 6px 0 32px; }
-  h2 { color: var(--navy); font-size: 1.2rem; margin: 28px 0 8px; }
+  h2 { font-family: var(--rounded); color: var(--navy); font-size: 1.2rem; margin: 28px 0 8px; }
   p + p { margin-top: 10px; }
   a { color: var(--fuchsia); font-weight: 600; text-decoration: none; }
   a:hover { text-decoration: underline; }
@@ -51,14 +63,14 @@
   your device. We cannot see it.</p>
 
   <h2>Calendar links you add</h2>
-  <p>If you add a calendar link (for example a school calendar from FACTS or RenWeb,
-  or a sports team feed), your device fetches that link directly from its source, the
-  same way a calendar app would. That request goes from your phone to your school or
-  team's server — never through us, because there is no "us" in the middle.</p>
+  <p>If you add a calendar link (for example a school portal calendar or a sports team
+  feed), your device fetches that link directly from its source, the same way a
+  calendar app would. That request goes from your phone to your school or team's
+  server — never through us, because there is no "us" in the middle.</p>
 
   <h2>Purchases</h2>
-  <p>The Fridgeworthy Plus upgrade is a one-time purchase handled entirely by Apple's
-  App Store. Apple processes the payment and manages the receipt under
+  <p>The Fridgeworthy Family upgrade and tips are one-time purchases handled entirely
+  by Apple's App Store. Apple processes the payment and manages the receipt under
   <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. We never
   see your payment details.</p>
 
