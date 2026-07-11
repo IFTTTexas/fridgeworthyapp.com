@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fridgeworthy — Your family's day, on paper, on the fridge</title>
+<meta name="description" content="Fridgeworthy turns your family calendars into a clean, printable daily sheet for each kid. Homework, practices, chores. One tap, one page, stuck on the fridge.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<style>
+  :root {
+    --navy: #292E61;
+    --fuchsia: #DE30B3;
+    --ink: #1c1c28;
+    --muted: #5c5c6e;
+    --bg-blue: #eaf1fb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 18%, var(--bg-blue) 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  main { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 56px 0; border-bottom: 1px solid rgba(41, 46, 97, 0.08); }
+  section:last-of-type { border-bottom: none; }
+
+  .hero { text-align: center; padding: 72px 0 64px; border-bottom: none; }
+  .app-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 27px; /* iOS squircle-ish */
+    box-shadow: 0 10px 30px rgba(41, 46, 97, 0.25);
+    margin-bottom: 24px;
+  }
+  .wordmark {
+    font-size: clamp(2.6rem, 8vw, 3.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+  }
+  .wordmark span { color: var(--fuchsia); }
+  .tagline {
+    font-size: clamp(1.15rem, 4vw, 1.4rem);
+    font-weight: 650;
+    color: var(--navy);
+    margin-top: 12px;
+  }
+  .hero p.lede { margin: 20px auto 0; max-width: 34em; color: var(--muted); }
+  .badge {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 10px 22px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 750;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+  p { color: var(--ink); }
+  p + p { margin-top: 12px; }
+
+  ol.steps { margin: 18px 0 0 1.2em; }
+  ol.steps li { margin-bottom: 12px; padding-left: 6px; }
+  ol.steps b { color: var(--navy); }
+
+  ul.features { list-style: none; margin-top: 18px; }
+  ul.features li {
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(41, 46, 97, 0.10);
+    border-radius: 12px;
+  }
+  ul.features b { color: var(--navy); }
+
+  .privacy-callout {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(41, 46, 97, 0.12);
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  a { color: var(--fuchsia); font-weight: 600; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .contact-email { font-size: 1.2rem; }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px 48px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer a { color: var(--muted); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+
+  <section class="hero">
+    <img class="app-icon" src="icon.png" alt="Fridgeworthy app icon" width="120" height="120">
+    <div class="wordmark">Fridge<span>worthy</span></div>
+    <div class="tagline">Your family's day, on paper, on the fridge.</div>
+    <p class="lede">Fridgeworthy turns your family calendars into a clean, printable daily
+    sheet for each kid. Homework, practices, chores. One tap, one page, stuck on the
+    fridge where everyone actually looks.</p>
+    <!-- APP STORE LINK — when the app is live:
+         1. Get the real URL from App Store Connect (looks like
+            https://apps.apple.com/app/fridgeworthy/id123456789)
+         2. Generate the official badge at https://toolbox.marketingtools.apple.com/en-us/app-store
+            and drop it in as app-store-badge.svg
+         3. Replace the div below with:
+         <a href="APP_STORE_URL"><img src="app-store-badge.svg" alt="Download on the App Store" style="height:56px"></a>
+    -->
+    <div class="badge">Coming soon to the App&nbsp;Store</div>
+  </section>
+
+  <section>
+    <h2>Kids don't check apps. They check the fridge.</h2>
+    <p>Every family app wants another screen in your kid's face. Fridgeworthy goes the
+    other way. It pulls from the calendars you already have, including school portals,
+    sports teams, and your own family calendar, and prints a simple sheet each kid can
+    read, check off, and own.</p>
+    <p>No new calendar to maintain. No accounts to create. It reads what you already use.</p>
+  </section>
+
+  <section>
+    <h2>Three steps, then it just runs</h2>
+    <ol class="steps">
+      <li><b>Add your kids.</b> A profile for each one, with their own color and their own sheet.</li>
+      <li><b>Connect what matters.</b> Device calendars, school feeds (FACTS, RenWeb, and any
+      calendar link), plus recurring routines like "make your bed" on the days you pick.</li>
+      <li><b>Print.</b> One tap from the app or straight from a home screen widget. AirPrint
+      sends it to your printer, and the sheet lands on the fridge.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>What's in the box</h2>
+    <ul class="features">
+      <li><b>A sheet per kid.</b> Unlimited profiles. Each kid gets their own page in their own color.</li>
+      <li><b>Checklists and check-offs.</b> Kids check items off on paper or on the widget. Progress carries across devices.</li>
+      <li><b>Routines.</b> Chores and habits on a weekly schedule, no calendar events required.</li>
+      <li><b>Today, Soon, Later.</b> Each sheet shows today plus what's coming, so nothing sneaks up on you.</li>
+      <li><b>Widgets.</b> See each kid's day at a glance and print without opening the app.</li>
+      <li><b>School calendar ready.</b> If your school uses FACTS or publishes a calendar link, it connects in about a minute.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Your family's data stays yours</h2>
+    <div class="privacy-callout">
+      <p>Fridgeworthy runs entirely on your device. There's no account, no server, and no
+      data collection. We can't see your calendars and neither can anyone else. That's
+      not a setting. It's how the app is built.</p>
+      <p><a href="privacy.html">Read the full privacy policy</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Say hi</h2>
+    <p>Questions, ideas, or a school setup that isn't working? Email me directly:</p>
+    <p class="contact-email"><a href="mailto:hello@fridgeworthyapp.com">hello@fridgeworthyapp.com</a></p>
+    <p>I'm a dad who built this for my own fridge. I read everything.</p>
+  </section>
+
+</main>
+<footer>
+  Fridgeworthy &middot; Made by a parent, for the fridge &middot;
+  <a href="mailto:hello@fridgeworthyapp.com">hello@fridgeworthyapp.com</a> &middot;
+  <a href="privacy.html">Privacy</a>
+</footer>
+</body>
+</html>
