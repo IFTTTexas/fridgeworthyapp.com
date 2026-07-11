@@ -85,14 +85,13 @@
     margin-bottom: 24px;
   }
   .wordmark {
-    /* ui-rounded = SF Rounded on Apple devices, matching the in-app wordmark. */
-    font-family: var(--rounded);
-    font-size: clamp(2.6rem, 8vw, 3.6rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--navy);
+    /* wordmark.svg = the in-app SF Rounded wordmark, vectorized — identical
+       on every browser. Dark-mode colors live inside the SVG. */
+    display: inline-block;
+    width: clamp(16rem, 49vw, 22rem);
+    max-width: 100%;
+    height: auto;
   }
-  .wordmark span { color: var(--fuchsia); }
   .tagline {
     font-family: var(--rounded);
     font-size: clamp(1.15rem, 4vw, 1.4rem);
@@ -191,7 +190,7 @@
 
   <section class="hero">
     <img class="app-icon" src="icon-glass.png" alt="Fridgeworthy app icon" width="120" height="120">
-    <div class="wordmark">Fridge<span>worthy</span></div>
+    <div><img class="wordmark" src="wordmark.svg" alt="Fridgeworthy"></div>
     <div class="tagline">Your family's day, on paper, on the fridge.</div>
     <p class="lede">Fridgeworthy turns your family calendars into a clean, printable daily
     sheet for each kid. Homework, practices, chores. One tap, one page, stuck on the
